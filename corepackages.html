@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Packages - Restaurant Table Booking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjusted transparency */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .package-card {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card img {
+            height: 300px; /* Set a fixed height */
+            object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+        }
+
+        .package-card .card-body {
+            text-align: left; /* Align text to the left */
+            background-color: rgba(0, 0, 0, 0.7); /* Card body background to match the theme */
+            flex: 1; /* Make card body take up remaining space */
+        }
+
+        .package-card .card-title {
+            font-family: 'Lobster', cursive;
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .package-card .card-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: white; /* Match the login page text color */
+        }
+
+        .card-columns {
+            display: flex;
+        }
+
+        @media (max-width: 767px) {
+            .package-card img {
+                width: 100%;
+                height: auto; /* Maintain aspect ratio on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Restaurant Table Booking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about"><i class="fa fa-info-circle"></i> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/core-packages"><i class="fa fa-cube"></i> Core Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><i class="fa fa-sign-in"></i> Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup"><i class="fa fa-user-plus"></i> Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/book-your-table"><i class="fa fa-calendar"></i> Book Your Table</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Core Packages</h1>
+    </div>
+
+    <!-- Packages Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 d-flex">
+                <div class="card package-card">
+                    <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="card-img-top" alt="Dinner Reservation">
+                    <div class="card-body">
+                        <h3 class="card-title">Dinner Reservation</h3>
+                        <p class="card-text">Experience a delightful dinner with our special reservation service. Enjoy a fine dining experience with top-notch service and a memorable atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card package-card">
+                    <img src="images/jason-leung-poI7DelFiVA-unsplash.jpg" class="card-img-top" alt="Business Reservation">
+                    <div class="card-body">
+                        <h3 class="card-title">Business Reservation</h3>
+                        <p class="card-text">Book a business reservation for your corporate meetings and events. Our facilities are equipped with everything you need for a successful business gathering.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card package-card">
+                    <img src="images/robert-bye-4UGlx_OXqgs-unsplash.jpg" class="card-img-top" alt="Birthday Reservation">
+                    <div class="card-body">
+                        <h3 class="card-title">Birthday Reservation</h3>
+                        <p class="card-text">Celebrate your special day with our birthday reservation package. Enjoy a festive atmosphere, delicious food, and excellent service to make your birthday unforgettable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
