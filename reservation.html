@@ -3,76 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make a Reservation</title>
+    <title>Book Your Table</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet"> <!-- Link to the external CSS file -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            padding: 20px;
+        .reservation-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
         }
+
         .reservation-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+        }
+
+        .reservation-form label {
+            color: black;
+        }
+
+        .reservation-title {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="reservation-form">
-            <h2 class="text-center mb-4">Make a Reservation</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Restaurant Table Booking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-box"></i> Core packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/reservation">Book Your Table</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container reservation-container mt-5">
+        <h1 class="text-center text-white reservation-title">Book Your Table</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="reservation-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date:</label>
+                            <input type="date" class="form-control" id="date" name="date" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time:</label>
+                            <input type="time" class="form-control" id="time" name="time" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests:</label>
+                            <input type="number" class="form-control" id="guests" name="guests" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservationType">Reservation Type:</label>
+                            <select class="form-control" id="reservationType" name="reservationType" required autocomplete="off">
+                                <option value="">Select Type</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="otherType">If Other above, please specify:</label>
+                            <input type="text" class="form-control" id="otherType" name="otherType" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialRequests">Any Special Requests:</label>
+                            <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3" autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="date">Date:</label>
-                    <input type="date" class="form-control" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Time:</label>
-                    <input type="time" class="form-control" id="time" name="time" required>
-                </div>
-                <div class="form-group">
-                    <label for="guests">Number of Guests:</label>
-                    <input type="number" class="form-control" id="guests" name="guests" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="reservationType">Reservation Type:</label>
-                    <select class="form-control" id="reservationType" name="reservationType" required>
-                        <option value="">Select Type</option>
-                        <option value="birthday">Birthday</option>
-                        <option value="anniversary">Anniversary</option>
-                        <option value="business">Business</option>
-                        <option value="dinner">Dinner</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="otherType">If Other above, please specify:</label>
-                    <input type="text" class="form-control" id="otherType" name="otherType">
-                </div>
-                <div class="form-group">
-                    <label for="specialRequests">Any Special Requests:</label>
-                    <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
 
